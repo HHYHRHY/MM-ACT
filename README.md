@@ -1,8 +1,16 @@
 # MM-ACT: Learn from Multimodal Parallel Generation to Act
 
 [![arXiv](https://img.shields.io/badge/arXiv-Paper-red.svg)](Arxiv_Link)
-[![Hugging Face Models](https://img.shields.io/badge/%F0%9F%A4%97-Model-yellow)](Model_Huggingface_Link)
-[![Hugging Face Datasets](https://img.shields.io/badge/%F0%9F%A4%97-Dataset-blue)](Dataset_Huggingface_Link)
+[![Hugging Face Models](https://img.shields.io/badge/%F0%9F%A4%97-Model-yellow)](https://huggingface.co/hhyhrhy/MM-ACT-Model)
+[![Hugging Face Datasets](https://img.shields.io/badge/%F0%9F%A4%97-Dataset-blue)](https://huggingface.co/datasets/hhyhrhy/MM-ACT-data)
+
+<br>
+
+<div align="center">
+  <img src="assets/MM-ACT.jpg" width="80%" alt="MM-ACT Arch"/>
+</div>
+
+<br>
 
 **MM-ACT** is a unified model that integrates text, image, and action into a shared token space, performing generation across all three modalities.
 It adopts re-mask parallel decoding strategy for text and image generation, and employs one-step parallel decoding strategy for action generation to improve efficiency.
@@ -12,7 +20,6 @@ This repository contains:
 - Training pipelines and deployment scripts for one-step parallel decoding and re-mask parallel decoding strategies across three modalities: action, text, and image.
 - Scripts for evaluation on LIBERO and Robotwin, as well as the data collection pipeline used for task planning annotation on Robotwin.
 
----
 
 ## 🛠️ Installation
 
@@ -37,11 +44,11 @@ pip install -r requirement.txt
   We utilize LIBERO datasets from [Huggingface_LeRobot](https://huggingface.co/lerobot), and uses LeRobot datasets for loading robot data.
   Please download [LIBERO-Object](https://huggingface.co/datasets/lerobot/libero_object_image),
   [LIBERO-Spatial](https://huggingface.co/datasets/lerobot/libero_spatial_image),[LIBERO-Goal](https://huggingface.co/datasets/lerobot/libero_goal_image) and
-  [LIBERO-10](https://huggingface.co/datasets/lerobot/libero_10_image). For LIBERO-10, we also provide our task planning datasets in [LIBERO-10-task](huggingface_link).
+  [LIBERO-10](https://huggingface.co/datasets/lerobot/libero_10_image). For LIBERO-10, we also provide our task planning datasets in [LIBERO-10-task](https://huggingface.co/datasets/hhyhrhy/MM-ACT-data/tree/main/LIBERO).
 
 - **RoboTwin**
 
-  For RoboTwin datasets, we utilize a dataset sampling pipeline that includes task planning generation. You can download our [training datasets](huggingface_link)
+  For RoboTwin datasets, we utilize a dataset sampling pipeline that includes task planning generation. You can download our [datasets](https://huggingface.co/datasets/hhyhrhy/MM-ACT-data/tree/main/RoboTwin)
   or collect your own datasets with our pipeline in [Robotwin_subtask](github_link).
 
 ### 3. Model Weight Preparation
@@ -82,7 +89,7 @@ Then refer to the [training/train_mmact_libero_action.py](training/train_mmact_l
 
 ## ⚡ Evaluation & Deployment
 
-Our trained model weight can be found at: [MM-ACT-weight](huggingface_link])
+Our trained model weight can be found at: [MM-ACT-weight](https://huggingface.co/hhyhrhy/MM-ACT-Model)
 
 For **LIBERO** evalutation, please refer to [experiments/experiment_readme.md](experiments/experiment_readme.md) for detailed instructions.
 
@@ -90,20 +97,6 @@ For **RoboTwin** evaluation, please follow [Robotwin_subtask](github_link) instr
 
 For real-world deployment, please refer to the script provided at: [deployment/mmact_deploy.py](deployment/mmact_deploy.py)
 
-## 📝 Citation
-
-If you find this project useful, please cite:
-
-```latex
-@article{xxx,
-  title={xxx},
-  author={xxx},
-  journal={xxx},
-  year={xxx}
-}
-```
-
-Thank you!
 
 ## Acknowledgments
 
