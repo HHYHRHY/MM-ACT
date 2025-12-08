@@ -33,7 +33,7 @@ conda create -n mmact python=3.13
 conda activate mmact
 
 # Install requirements
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 
 ### 2. Dataset Preparation
@@ -55,6 +55,7 @@ pip install -r requirement.txt
 Download the base model weights from MMaDA: [MMaDA-8B-Base](https://huggingface.co/Gen-Verse/MMaDA-8B-Base) and expand the original model's action codebook (we use 2048):
 
 ```bash
+cp models/configuration_llada.py models/modeling_llada.py ${origin_model_path}
 python model_utils/resize_model_vocab.py --model ${origin_model_path} --out ${output_model_path} --num_new ${action_codebook_size}
 ```
 
