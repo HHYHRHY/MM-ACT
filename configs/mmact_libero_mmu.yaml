@@ -14,6 +14,8 @@ model:
 dataset:
   preprocessing:
     max_seq_length: 1024
+  dataset_file_paths: ""
+  text_annotation_paths: ""
   
 
 training:
