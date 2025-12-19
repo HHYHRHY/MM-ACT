@@ -99,8 +99,9 @@ For **LIBERO** and **RoboTwin** evalutation, please refer to [experiments/README
 For real-world deployment, please refer to the script provided at: [deployment/mmact_deploy.py](deployment/mmact_deploy.py)
 
 ## 🎥 Real-world Experiments (Video Demo)
-
 https://private-user-images.githubusercontent.com/91517920/520774696-02a3bf40-f1ae-4f52-9562-a3fc2e9a1477.mp4
+
+A video demonstration of **MM-ACT** on real-world Franka experiments is also available on YouTube: [YouTube Link](https://youtu.be/Y8WBWTi2MdQ).
 
 ## Citation
 
