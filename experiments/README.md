@@ -95,6 +95,20 @@ RoboTwin/
         ...
 ```
 Both our model and baselines in our paper are trained using data collected from L515 cameras (including both head and wrist cameras). To test with our models, please modify the relevant parameters in RoboTwin configuration file (task_config/demo_randomized.yml).
+
+## Install evaluation environment
+You can directly install MM-ACT's requirements in a RoboTwin environment.
+```bash
+# After installing a RoboTwin conda environment, run the installation command of MM-ACT inside RoboTwin
+conda activate RoboTwin
+cd MM-ACT
+pip install -r requirements.txt
+```
+If you run into segmentation faults during evaluation, please check if the numpy version is too high. Downgrading numpy to numpy==1.26.0 should solve this problem.
+```bash
+pip install numpy==1.26.0
+```
+
 ## Acknowledgments
 
 This RoboTwin evaluation is based on [RoboTwin](https://github.com/RoboTwin-Platform/RoboTwin.git). Thanks these great work.
