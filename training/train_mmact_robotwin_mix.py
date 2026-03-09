@@ -93,6 +93,8 @@ def main():
         - config.training.chunk_size * config.training.action_dim
         - 2
     )
+    # 256 is the default num_vq_tokens per image in MMada; 2 for <|soi|> and <|eoi|>
+    max_image_seq_length = config.dataset.preprocessing.max_seq_length - 256 - 2
     uni_prompting = UniversalPrompting(
         tokenizer,
         max_text_len=config.dataset.preprocessing.max_seq_length,
@@ -530,6 +532,7 @@ def main():
                         batch_size_lm=0,
                         batch_size_mmu=batch_size_mmu,
                         batch_size_action=batch_size_action,
+                        max_image_seq_length=max_image_seq_length,
                         max_action_prompt_len=max_action_prompt_len,
                         p_mask_mmu=p_mask_mmu,
                         answer_lengths_mmu=answer_lengths_mmu,
